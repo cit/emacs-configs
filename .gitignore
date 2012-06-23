@@ -1,0 +1,8 @@
+backups*
+elpa*
+info*
+auto-complete*
+gnus*
+site-lisp*
+*.save
+*~
