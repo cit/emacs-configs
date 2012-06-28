@@ -4,12 +4,12 @@
 
 (message "applying keyboard shortcuts ...")
 
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-x C-k") 'kill-region)
+(global-set-key (kbd "C-c C-k") 'kill-region)
 
 ;; hippie-expand
-(global-set-key "\M- " 'hippie-expand)
+(global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; expand region
 (require 'expand-region)
@@ -26,14 +26,10 @@
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 
 ;; go to a specific line
-(global-set-key "\M-g" 'goto-line)
+(global-set-key (kbd "M-g") 'goto-line)
 
 ;; compile
 (global-set-key [f5] 'compile)
-
-;; really useful feature to avoid over-long lines in source code
-;;(global-set-key (kbd "<f9>") 'highlight-beyond-fill-column)
-;;(global-set-key (kbd "<f8>") 'font-lock-fontify-buffer)
 
 ;; keyboard macros
 (global-set-key [f7]  'start-kbd-macro)
@@ -61,8 +57,9 @@
 (global-set-key (kbd "M--") 'text-scale-adjust)
 (global-set-key (kbd "M-0") 'text-scale-adjust)
 
-;; set an easy keybinding for switching windows
-(global-set-key (kbd "C-<tab>") 'other-window)
+;; set keybinding to switch between windows
+(global-set-key (kbd "C-x C-n") 'other-window)
+(global-set-key (kbd "C-x C-p") '(lambda () (interactive) (other-window -1)))
 
 ;; set the thinkpad browser keys to cycle buffers
 (autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
