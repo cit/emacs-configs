@@ -76,8 +76,6 @@
 ;; set the right make command
 (setq compile-command "make clean; make")
 
-(setq find-makefile-depth 2)
-
 ;; improve the performance of the display engine (http://bit.ly/oBeyob)
 (setq redisplay-dont-pause t)
 
@@ -124,7 +122,7 @@
 
 ;; Tags
 (setq tags-table-list
-      '("~/Werkstatt/emacs"))
+      (list (concat custom-basedir "tags/")))
 
 ;; color-theme
 (require 'color-theme)
@@ -182,8 +180,8 @@
 ;; Smex
 ;;------------------------------------------------------------------------------
 
-(setq smex-save-file (concat custom-basedir "smex.save"))
 (require 'smex)
+(setq smex-save-file (concat custom-basedir "smex.save"))
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
