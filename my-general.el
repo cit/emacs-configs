@@ -32,6 +32,9 @@
 ;; make "yes or no" "y or n"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; why should anyone want to leave emacs? Better confirm that
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 ;; no bells please
 (global-visual-line-mode 1)
 (add-hook 'minibuffer-setup-hook (lambda ()
