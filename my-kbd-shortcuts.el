@@ -32,9 +32,9 @@
 (global-set-key [f5] 'compile)
 
 ;; keyboard macros
-(global-set-key [f7]  'start-kbd-macro)
-(global-set-key [f8]  'end-kbd-macro)
-(global-set-key [f9]  'call-last-kbd-macro)
+(global-set-key [f7] 'start-kbd-macro)
+(global-set-key [f8] 'end-kbd-macro)
+(global-set-key [f9] 'call-last-kbd-macro)
 
 ;; fullscreen
 (defun switch-full-screen ()
