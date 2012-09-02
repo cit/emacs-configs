@@ -28,18 +28,23 @@
   (let* ((dic ispell-current-dictionary)
     	 (change (if (string= dic "deutsch") "english" "deutsch")))
     (ispell-change-dictionary change)
-    (message "Dictionary switched from %s to %s" dic change)
-    ))
+    (message "Dictionary switched from %s to %s" dic change)))
+
 (global-set-key (kbd "<f6>") 'fd-switch-dictionary)
-    
+
 
 ;; change mouse-2 to mouse-3 for correcting words in flyspell
 (add-hook 'flyspell-mode-hook
-    (lambda () 
-       (define-key flyspell-mouse-map (kbd "<mouse-3>") 'flyspell-correct-word) 
-       ))
+    (lambda ()
+       (define-key flyspell-mouse-map (kbd "<mouse-3>") 'flyspell-correct-word)))
 
 ;; spellcheck in LaTex mode
 (add-hook `latex-mode-hook `flyspell-mode)
 (add-hook `tex-mode-hook `flyspell-mode)
 (add-hook `bibtex-mode-hook `flyspell-mode)
+
+;; activate flyspell automatically when committing via magit
+(add-hook 'magit-log-edit-mode-hook
+          (lambda ()
+            (flyspell-mode)
+            (ispell-change-dictionary "english")))
