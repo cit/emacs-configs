@@ -52,20 +52,11 @@
 ;;  '(font-lock-keyword-face ((t (:foreground "#729fcf" :bold t :weight bold))))
 ;;  '(linum ((t (:inherit (shadow default) :foreground "white")))))
 
- (custom-set-variables
-;;   ;; custom-set-variables was added by Custom.
-;;   ;; If you edit it by hand, you could mess it up, so be careful.
-;;   ;; Your init file should contain only one such instance.
-;;   ;; If there is more than one, they won't work right.
-;;  '(cperl-close-paren-offset -4)
-  '(cperl-continued-statement-offset 4)
-;;  '(cperl-electric-keywords t)
-;;  '(cperl-electric-linefeed t)
-;;  '(cperl-electric-parens t)
-;;  '(cperl-hairy nil)
-  '(cperl-indent-level 4)
-  ;;
-  '(cperl-indent-parens-as-block t)
-;;  '(cperl-indent-parens-as-block t)
-;;  '(cperl-tab-always-indent t))
-  )
+(custom-set-variables
+ '(cperl-continued-statement-offset 4)
+ '(cperl-indent-level 4)
+ '(cperl-indent-parens-as-block t)
+
+ ;; use K&R style and put the else in a new line
+ '(cperl-merge-trailing-else nil)
+ '(cperl-tab-always-indent t))
