@@ -15,19 +15,21 @@
 (setq compilation-scroll-output t)
 
 (global-auto-revert-mode t)
+;; activate folding automatically when opening a tex file
+(add-hook 'LaTeX-mode-hook (lambda () (TeX-fold-mode t)
+                             (TeX-fold-buffer)))
 
-;; start flyspell-mode when editing LaTex code
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;; activate flyspell automatically when entering latex mode
+(add-hook 'LaTeX-mode-hook (lambda () (flyspell-mode)))
+
+;; activate latex-math-mode automatically when entering latex mode
+(add-hook 'LaTeX-mode-hook (lambda () (LaTeX-math-mode)))
 
 ;; create pdf files instead of dvi files
 (setq TeX-PDF-mode t)
 
-;; activate the folding macro
-(add-hook 'LaTeX-mode-hook (lambda ()
-                             (Tex-fold-mode 1)))
-
 ;; RefTex
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'LaTeX-mode-hook (lambda () (turn-on-reftex)))
 (setq reftex-plug-into-AUCTeX t)
 (setq reftex-use-external-file-finders t)
 (setq reftex-external-file-finders
