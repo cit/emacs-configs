@@ -41,10 +41,12 @@
  '( (perl . t)
     (ruby . t)
     (sh . t)
+    (latex . t)
     (python . t)
     (emacs-lisp . t)
     (gnuplot . t)
-    ))
+    (lisp .t)
+    (dot . t)))
 
 ;; fontifying code buffers
 (setq org-src-fontify-natively t)
