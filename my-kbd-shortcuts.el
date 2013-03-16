@@ -36,6 +36,15 @@
 (global-set-key [f8] 'end-kbd-macro)
 (global-set-key [f9] 'call-last-kbd-macro)
 
+;; indent whole buffer
+(defun indent-whole-buffer ()
+  "Indent the whole buffer."
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+(global-set-key (kbd "C-c i b") 'indent-whole-buffer)
+
 ;; fullscreen
 (defun switch-full-screen ()
   (interactive)
