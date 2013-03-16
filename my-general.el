@@ -19,11 +19,8 @@
 ;; my email adress
 (setq user-mail-address "florian@adamsky.it")
 
-;; set browser according to the GConf configuration system
-(setq browse-url-generic-program
-      (substring (shell-command-to-string
-                  "gconftool-2 -g /desktop/gnome/applications/browser/exec") 0 -1)
-      browse-url-browser-function 'browse-url-generic)
+;; set default browser
+(setq browse-url-generic-program "gnome-open")
 
 ;; don't show so many messages on startup
 (setq inhibit-startup-message t)
