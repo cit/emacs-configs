@@ -23,6 +23,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.org\\'"
                                 . org-mode))
+;; activate ido-mode in org-mode
+(setq org-completion-use-ido t)
+(setq org-refile-use-outline-path nil)
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ;; add modules/home/cit/Notizen/phd-journal.org
 (add-to-list 'org-modules 'org-odt)
